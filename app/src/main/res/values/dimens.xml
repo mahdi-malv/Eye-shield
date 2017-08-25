@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="animation_button_margin">32dp</dimen>
+    <dimen name="animation_button_margin2">26dp</dimen>
+    <dimen name="splash_name_size">25sp</dimen>
+    <dimen name="splash_pic_size">200dp</dimen>
+</resources>

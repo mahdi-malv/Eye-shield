@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.mmalvandi.serviceone">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/icon_small"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/MainTheme"/> <!-- Main activity -->
+
+
+        <!-- Main service = EyeService -->
+        <service
+            android:name=".services.EyeService"
+            android:process="com.mmalvandi.eyeshieldservice"
+            android:stopWithTask="false"/>
+
+        <activity
+            android:name=".activities.SettingActivity"
+            android:label="@string/title_activity_settings"/> <!-- Settings -->
+
+        <activity
+            android:name=".activities.TimerActivity"
+            android:configChanges="orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:label=""
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:process="com.mmalvandi.eyeservice"
+            android:theme="@style/MyOwnTheme"/> <!-- Timer -->
+
+        <activity android:name=".activities.HelpActivity"/>
+        <activity android:name=".activities.AboutActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".activities.EmailActivity"/>
+
+        <receiver
+            android:name=".services.StartMyServiceAtBootReceiver"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <!-- MAGNET -->
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="ir.magnet.sdk.MagnetInterstitialActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name=".notificationaction.ReceiverActivity"
+            android:configChanges="orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:label=""
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:process="com.mmalvandi.stop"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AnimationActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+        <activity android:name=".activities.FilterActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
+
+        <service
+            android:name=".services.FilterService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+    </application>
+
+</manifest>

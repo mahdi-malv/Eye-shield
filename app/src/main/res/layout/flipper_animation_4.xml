@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by SkillsOn -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/flipper_4">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/eyeMovingAnim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/text"
+        android:layout_margin="32dp"/>
+
+    <ScrollView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:text="@string/flipper_4_text"
+        android:layout_margin="16dp"
+        android:layout_above="@+id/gotIt"
+        android:layout_centerHorizontal="true"
+        android:background="#12858585">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/flipper_4_text"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/gotIt"
+        android:layout_width="128dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="@dimen/animation_button_margin2"
+        android:background="@drawable/shape_flipper_4"
+        android:text="@string/got_it"
+        android:textColor="#FFF"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:layout_marginBottom="@dimen/animation_button_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

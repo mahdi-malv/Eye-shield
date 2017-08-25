@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="settings_eyeshield">
+    <CheckBoxPreference
+        android:key="startup"
+        android:title="Start At Boot"
+        android:summary="App Will Automatically Start At Boot"
+        android:defaultValue="true"
+        />
+    <PreferenceCategory
+        android:title="@string/sound_settings"
+        android:key="sound_cat">
+        <CheckBoxPreference
+            android:key="sound"
+            android:title="@string/sound"
+            android:summary="@string/change_sound"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/time">
+        <EditTextPreference
+            android:key="time"
+            android:inputType="number"
+            android:title="@string/work_time"
+            android:summary="@string/set_working_time"
+            android:defaultValue="20"/>
+        <EditTextPreference
+            android:key="rest_time"
+            android:inputType="number"
+            android:title="@string/rest_time"
+            android:summary="@string/set_the_resting_time"
+            android:defaultValue="20"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/notification_settings">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notification"
+            android:title="@string/notification"
+            android:summary="@string/change_notification"/>
+    </PreferenceCategory>
+</PreferenceScreen>

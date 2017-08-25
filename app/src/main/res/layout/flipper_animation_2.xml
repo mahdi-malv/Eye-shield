@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by SkillsOn -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/flipper_2"><!--Material creamy-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/sickVRAnim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/text"/>
+
+    <!--Scrollable text-->
+    <ScrollView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:text="@string/flipper_2_text"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/next2"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/flipper_2_text"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/next2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        app:lottie_fileName="next.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="@dimen/animation_button_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/animation_button_margin2"
+        android:padding="8dp"
+        android:background="@drawable/shape_flippers_next_button"/>
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by SkillsOn -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Anim as bg-->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/gradientAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        android:text="@string/flipper_1_text"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:layout_centerInParent="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/next1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        app:lottie_fileName="next.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:padding="8dp"
+        android:background="@drawable/shape_flippers_next_button"
+        android:layout_marginRight="@dimen/animation_button_margin2"
+        android:layout_marginBottom="@dimen/animation_button_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

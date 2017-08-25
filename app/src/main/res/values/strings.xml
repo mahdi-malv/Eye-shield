@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Eye Shield</string>
+    <string name="time_past_text1">" minute(s) Past. Give Your Eyes a Break for "</string>
+    <string name="time_past_text2">" second(s)"</string>
+    <string name="keep_working">" Second(s) is Over. You Can Keep Working"</string>
+    <string name="disable_service">Disable</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="disable_question">Disable Service?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="service_working">Service Working</string>
+    <string name="past_time">"  Passed."</string>
+    <string name="resting_eyes">"  Resting Time"</string>
+    <string name="exit">Exit</string>
+    <string name="settings">Settings</string>
+    <string name="sound_settings">Sound Settings</string>
+    <string name="sound">Sound</string>
+    <string name="change_sound">Change Mutation of Sound. (Requires Restart)</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="notification">Notification Timer</string>
+    <string name="change_notification">Show timer in notification. (Requires Restart)</string>
+    <string name="about">About App</string>
+    <string name="power"/>
+    <string name="change_status">Change Status</string>
+    <string name="enter_custom_time_default_20">Enter Custom Time (Default: 20min)</string>
+    <string name="enter_rest_time_default_20sec">Enter Rest Time (Default: 20sec)</string>
+    <string name="logo">logo</string>
+    <string name="set_working_time">Set Working Time(Requires Restart).\nBetween 1 and 120</string>
+    <string name="set_the_resting_time">Set The Resting Time(Requires Restart).\nBetween 10 and 600</string>
+    <string name="time">Time</string>
+    <string name="stop_and_exit">Stop and Exit</string>
+    <string name="ok">OK</string>
+    <string name="rate">Rate App</string>
+    <string name="work_time">Work Time (Minutes)</string>
+    <string name="rest_time">Rest Time (Seconds)</string>
+    <string name="about_message">
+    "If you are one of those users who work A lot with Your Device, with \"Eye Shield\" you will be able to manage that time and avoid hurting your Eyes. "
+    </string>
+    <string name="no_rate">Feature will be added in Release Version</string>
+    <string name="do_u_wanna_quit">The service is currently running. Do you want to stop it and Exit?</string>
+    <string name="exit_and_stop">Exit and Stop</string>
+    <string name="check_out_rule">Checkout Rule</string>
+    <string name="error_1">Some Thing Is Wrong. Default Settings Applied.</string>
+    <string name="sound_on">Sound: On</string>
+    <string name="sound_off">Sound: Off</string>
+    <string name="noti_on">Notification Timer: On</string>
+    <string name="noti_off">Notification Timer: Off</string>
+    <string name="not_specified">Default 20</string>
+    <string name="time_is">"Time: "</string>
+    <string name="rest_time_is">"Rest: "</string>
+    <string name="mins">" Min(s)"</string>
+    <string name="secs">" Sec(s)"</string>
+    <string name="mini_minute">" m"</string>
+    <string name="icon">icon</string>
+    <string name="skip">Skip</string>
+    <string name="time_past_text">
+        Your Working Time is Over! EyeShield recommends you to look at least 6 Meters far to restore your eye balance for specified time.
+    </string>
+    <string name="seconds">" Seconds"</string>
+    <string name="second">" Second"</string>
+    <string name="invalid_value">Invalid Values Entered. Set to Minimum.</string>
+    <string name="reclick_skip">Please click SKIP again to skip</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="version">v0.0.1</string>
+    <string name="app_name_help">Eye Shield</string>
+    <string name="text_help">"
+Thank you For choosing EyeShield.
+
+The <b>Eye</b> is one of most important parts of your body. This application helps you take care of it when you work too long with you device.
+There are 4 button in main circular menu. The top one is to start with your time which can be set in settings. The left one is <b>Night</b> mode which is useful in dark places. The right button is to enable <b>Day</b> mode for daily and usual times. The bottom one is to turn off the EyeShield is when it is running. After turning on the EyeShield it will show a notification that starts counting time and you can see the time specified according to the mode enabled. You can work with your device without worrying that you might work too long. <b>EyeShield</b> will show a warning after passed time if you keep working. When the warning is shown look at a far distance as long as warning time. after that you can restart working. EyeShield warning will pause the software you are working with, like a game. So do <b>not</b> be worried of losing anything.
+  Please contact us if you have any feedback."
+    </string>
+    <string name="contact_us">Contact Us</string>
+    <string name="copy_right_copy">Copyright &#169; 2017 mmalvandi\nAll Rights Reserved.</string>
+    <string name="developer_mahdi_malvandi">Developer: mmalvandi</string>
+    <string name="eye_shield_started">Eye shield mode activated!</string>
+    <string name="your_full_name">Your Full Name…</string>
+    <string name="mail_body">Mail Body…</string>
+    <string name="subject">Subject…</string>
+    <string name="send">Send</string>
+    <string name="email_explanation">In This Page You Can Contact Us By Your Email for Suggestions And Report.</string>
+    <string name="fill_all_fields">Please Fill all Fields.</string>
+    <string name="no_email_client_found">There are no email clients installed.</string>
+    <string name="not_released">Not Released yet.</string>
+    <string name="kothar_zero">بِسمِ اللّهِ الرّحمنِ الرّحیمِ</string>
+    <string name="kothar_three">إنَّ شانِئکَ هُوَ الأبتَر</string>
+    <string name="kothar_two">فَصَلِّ لِرَبّکَ وانحَر</string>
+    <string name="kothar_one">إنّا أعطَیناکَ الکوثَر</string>
+    <string name="okay">OK</string>
+    <string name="about_activity">
+        In This page you can rate the app if you like.\n
+        Also you can Contact Us if You have suggestions or complains.
+    </string>
+    <string name="about_eye_shield">About Eye Shield</string>
+    <string name="about_us">About Us</string>
+    <string name="done">Done!</string>
+    <string name="skip_q">SKIP?</string>
+    <string name="close_drawer">CLOSE</string>
+    <string name="open_drawer">OPEN</string>
+    <string name="year">2016 - 2017</string>
+    <string name="got_it">Got it!</string>
+    <string name="flipper_1_text">The Eye is one of the most important organs of the human body. Yet it is very vulnerable and must be taken care of. Working with electronic devices like phones for a long time can damage the cornea of the eyes.</string>
+    <string name="flipper_2_text">Using these devices too much can be dangerous to your health after a while. Generally they can not guarantee that your body will not get hurt. So how do you ensure that you will not be damaged by using these devices too much?</string>
+    <string name="flipper_3_text">The solution is to have a schedule to know where to stop and give a rest to your eyes. But if you focus on your daily work you may forget when to do that… . So you need something to recall you when you used your device too much.</string>
+    <string name="flipper_4_text">This application is based by the ophthalmology rule , The 20 20 20, which says every 20 minutes pause looking at screen and look 20 feet far for 20 second. So it\'s task is to set a reminder automatically to remind you every 20 minutes (or more or less according to your situation) to ensure that you are being careful not to hurt your eyes.</string>
+    <string name="screen_filter">Set screen filter</string>
+</resources>
