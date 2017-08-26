@@ -8,10 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -23,7 +20,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -33,12 +29,14 @@ import android.widget.Toast;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.mmalvandi.serviceone.R;
+import com.mmalvandi.serviceone.font.Tools;
 import com.mmalvandi.serviceone.maindraweritems.Items;
 import com.mmalvandi.serviceone.maindraweritems.ListAdapter;
 import com.mmalvandi.serviceone.maindraweritems.RecyclerItemClickListener;
 import com.mmalvandi.serviceone.services.EyeService;
 
-//TODO: add persian support
+//TODO: Add persian support
+//TODO: Add push notication
 
 @SuppressWarnings("ALL")
 public class MainActivity extends AppCompatActivity {
@@ -79,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
         addToolbar();
         getInit();
 
-        bgON = toBitmpDrawable(bgOn);
-        bgOFF = toBitmpDrawable(bgOff);
+//        bgON = toBitmpDrawable(bgOn);
+        bgON = Tools.toBitmpDrawable(this, bgOn);
+//        bgOFF = toBitmpDrawable(bgOff);
+        bgOFF = Tools.toBitmpDrawable(this, bgOff);
 
         retrieveMode();
         newInfoChanger();
@@ -283,6 +283,7 @@ public class MainActivity extends AppCompatActivity {
         if (!eyeServiceIsRunning()) {
             mode = Mode.NONE;
             preferences.edit().putInt("mode", 0).apply();
+            Tools.stopNotification(this);// If activity starts it will fix useless notification
             layout.setBackground(bgOFF);
         } else {
             int a = preferences.getInt("mode", 0);
@@ -366,16 +367,6 @@ public class MainActivity extends AppCompatActivity {
             return sound;
         }
 
-    }
-
-    //TO CHANGE BG without LAG
-    private BitmapDrawable toBitmpDrawable(int resDrawable) {
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        Bitmap bmp = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-                getResources(), resDrawable), size.x, size.y, true);
-        return new BitmapDrawable(this.getResources(), bmp);
     }
 
     public void getInit() {

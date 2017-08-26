@@ -4,6 +4,15 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="animation_button_margin">32dp</dimen>
     <dimen name="animation_button_margin2">26dp</dimen>
+
     <dimen name="splash_name_size">25sp</dimen>
     <dimen name="splash_pic_size">200dp</dimen>
+
+    <dimen name="activity_help_main_padding">4dp</dimen>
+    <dimen name="activity_help_main_padding_land">16dp</dimen>
+    <dimen name="activity_help_pic_size">90dp</dimen>
+    <dimen name="activity_help_name_size">25sp</dimen>
+    <dimen name="activity_help_name_size_land">20sp</dimen>
+    <dimen name="activity_help_version_size">17sp</dimen>
+    <dimen name="activity_help_main_size">17sp</dimen>
 </resources>

@@ -5,4 +5,12 @@
     <dimen name="activity_horizontal_margin">64dp</dimen>
     <dimen name="splash_name_size">35sp</dimen>
     <dimen name="splash_pic_size">320dp</dimen>
+
+    <dimen name="activity_help_main_padding">64dp</dimen>
+    <dimen name="activity_help_main_padding_land">64dp</dimen>
+    <dimen name="activity_help_pic_size">150dp</dimen>
+    <dimen name="activity_help_name_size">35sp</dimen>
+    <dimen name="activity_help_version_size">20sp</dimen>
+    <dimen name="activity_help_main_size">25sp</dimen>
+    <dimen name="activity_help_name_size_land">30sp</dimen>
 </resources>

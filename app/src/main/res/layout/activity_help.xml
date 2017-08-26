@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="@dimen/activity_help_main_padding"
     android:orientation="vertical"
     android:background="@drawable/bg2_blur">
 
     <ImageView
         android:contentDescription="@string/app_name"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/activity_help_pic_size"
+        android:layout_height="@dimen/activity_help_pic_size"
         android:src="@drawable/icon"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="25sp"
+        android:textSize="@dimen/activity_help_name_size"
         android:textStyle="bold"
         android:textColor="#FFF"
         android:layout_marginRight="8dp"
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/version"
-        android:textSize="17sp"
+        android:textSize="@dimen/activity_help_version_size"
         android:textColor="#bbdefb"
         app:layout_constraintTop_toBottomOf="@+id/app_name"
         app:layout_constraintRight_toRightOf="parent"
@@ -71,7 +71,7 @@
             android:id="@+id/help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="@dimen/activity_help_main_size"
             android:textColor="#e0f2f1"
             android:text="@string/text_help"/>
     </ScrollView>

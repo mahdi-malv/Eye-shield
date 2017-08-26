@@ -9,8 +9,8 @@
     android:background="@drawable/bg2_blur">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/activity_help_pic_size"
+        android:layout_height="@dimen/activity_help_pic_size"
         android:layout_margin="8dp"
         android:src="@drawable/icon"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,12 +23,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="20sp"
+        android:textSize="@dimen/activity_help_name_size_land"
         android:textStyle="bold"
         android:textColor="#FFF"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.419"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toLeftOf="@+id/scrollView2"
+        android:layout_marginRight="0dp" />
 
     <TextView
         android:id="@+id/app_version"
@@ -48,24 +52,26 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/app_name"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/scrollView2"
         android:layout_marginBottom="0dp"
         app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintBottom_toTopOf="@+id/bannerAdFrame">
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintBottom_toTopOf="@+id/bannerAdFrame"
+        android:layout_marginLeft="8dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_help"
-            android:padding="8dp"
-            android:textSize="15sp"
+            android:padding="@dimen/activity_help_main_padding_land"
+            android:textSize="@dimen/activity_help_main_size"
             android:textColor="#e0f2f1"/>
     </ScrollView>
 
+    <!--AD-->
     <FrameLayout
         android:id="@+id/bannerAdFrame"
     android:layout_width="0dp"
