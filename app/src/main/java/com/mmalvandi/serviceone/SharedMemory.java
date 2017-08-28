@@ -3,6 +3,7 @@ package com.mmalvandi.serviceone;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+// This class hold the Seekbar values
 public class SharedMemory {
 
     private SharedPreferences prefs;

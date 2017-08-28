@@ -23,7 +23,6 @@ public class AboutActivity extends AppCompatActivity {
         setTitle(getString(R.string.about_us));
         if (isFirstRun("myPref")) showHintDialog();// is it first Time Running the App?
         getInit();
-
         contactUsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,33 +37,22 @@ public class AboutActivity extends AppCompatActivity {
         contactUsText = (TextView) findViewById(R.id.text_contact_us);
         developerText = (TextView) findViewById(R.id.text_developer);
         appNameText = (TextView) findViewById(R.id.app_name);
-        appNameText.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(AboutActivity.this, R.string.kothar_zero, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+
+        appNameText.setOnLongClickListener(v -> {
+            Toast.makeText(AboutActivity.this, R.string.kothar_zero, Toast.LENGTH_SHORT).show();
+            return true;
         });
-        developerText.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(AboutActivity.this, R.string.kothar_three, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        developerText.setOnLongClickListener(v -> {
+            Toast.makeText(AboutActivity.this, R.string.kothar_three, Toast.LENGTH_SHORT).show();
+            return true;
         });
-        contactUsText.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(AboutActivity.this, R.string.kothar_two, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        contactUsText.setOnLongClickListener(v -> {
+            Toast.makeText(AboutActivity.this, R.string.kothar_two, Toast.LENGTH_SHORT).show();
+            return true;
         });
-        rateUsText.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(AboutActivity.this, R.string.kothar_one, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        rateUsText.setOnLongClickListener(v -> {
+            Toast.makeText(AboutActivity.this, R.string.kothar_one, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }// provided an easter egg in app (Quran Text by holding some buttons)
 
@@ -96,7 +84,8 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_EDIT);
-                intent.setData(Uri.parse("bazaar://details?id=" + "com.mmalvandi.eyeshield"));
+                //TODO: Markets are various. Think about it.
+                intent.setData(Uri.parse("bazaar://details?id=" + "com.skillson.eyeshield"));
                 intent.setPackage("com.farsitel.bazaar");
                 try {
                     startActivity(intent);

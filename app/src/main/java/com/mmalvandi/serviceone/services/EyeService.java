@@ -67,21 +67,16 @@ public class EyeService extends Service {
     }
 
     private void runTimer() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
-        final NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        final NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(this)
-                .setContentTitle("Eye Shield Running")
-                .setOngoing(true)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.eye_icon)
-                .addAction(R.drawable.ic_action_stop, "Stop", PendingIntent.getActivity(this, 1, new Intent(EyeService.this, ReceiverActivity.class), 0));
-        mNotifyBuilder.setContentText("");
+
+        final NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationCompat.Builder builder;
+        builder = builder();
+
         final Notification notification;
-        notification = mNotifyBuilder.build();
+        notification = builder.build();
         startForeground(notifyID, notification);
+
         r = new Runnable() {
             @SuppressLint("DefaultLocale")
             @Override
@@ -116,12 +111,12 @@ public class EyeService extends Service {
                 }
                 if (second >= 0) {
                     time = String.format("%02d : %02d : %02d", hours, minutes, secs);
-                    mNotifyBuilder.setContentText(time + getString(R.string.past_time) + "(" + customTime + getString(R.string.mini_minute) + ")");
+                    builder.setContentText(time + getString(R.string.past_time) + "(" + customTime + getString(R.string.mini_minute) + ")");
                 }
                 if (isNotificationAllowed) {
                     mNotificationManager.notify(
                             notifyID,
-                            mNotifyBuilder.build());
+                            builder.build());
                 }
                 handler.postDelayed(this, 1000);
             }
@@ -193,19 +188,34 @@ public class EyeService extends Service {
     }
 
     private boolean restartServiceIfRemoved() {
-        Intent restartServiceTask = new Intent(getApplicationContext(),this.getClass());
+        Intent restartServiceTask = new Intent(getApplicationContext(), this.getClass());
         restartServiceTask.putExtra("rest_time", customRestTime);
         restartServiceTask.putExtra("time", customTime);
         restartServiceTask.putExtra("sound", isSoundAllowed);
         restartServiceTask.putExtra("notification", isNotificationAllowed);
         restartServiceTask.putExtra("second", second + 3);
         restartServiceTask.setPackage(getPackageName());
-        PendingIntent restartPendingIntent =PendingIntent.getService(getApplicationContext(), 1,restartServiceTask, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent restartPendingIntent = PendingIntent.getService(getApplicationContext(), 1, restartServiceTask, PendingIntent.FLAG_ONE_SHOT);
         AlarmManager myAlarmService = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         myAlarmService.set(
                 AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + 1000,
                 restartPendingIntent);
         return false;
+    }
+
+    private NotificationCompat.Builder builder() {
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+
+        return new NotificationCompat.Builder(this)
+                .setContentTitle("Eye Shield Running")
+                .setOngoing(true)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.eye_icon)
+                .addAction(R.drawable.ic_action_stop, "Stop", PendingIntent.getActivity(this, 1, new Intent(this, ReceiverActivity.class), 0))
+                .setContentText("");
     }
 }

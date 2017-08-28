@@ -1,16 +1,13 @@
 package com.mmalvandi.serviceone.activities;
 
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.SeekBar;
+
 import com.mmalvandi.serviceone.R;
 import com.mmalvandi.serviceone.SharedMemory;
 import com.mmalvandi.serviceone.services.FilterService;
@@ -36,7 +33,7 @@ public class FilterActivity extends AppCompatActivity implements SeekBar.OnSeekB
 
     private void initialize() {
         shared = new SharedMemory(this);
-        getInit();
+        init();
         alphaSeek.setOnSeekBarChangeListener(this);
         redSeek.setOnSeekBarChangeListener(this);
         greenSeek.setOnSeekBarChangeListener(this);
@@ -97,7 +94,7 @@ public class FilterActivity extends AppCompatActivity implements SeekBar.OnSeekB
     public void cancelClick(View v) {
         stopServiceIfActive();
         NotificationManager m = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        m.cancel(0x355);
+        m.cancel(FilterService.NOTIFICATION_ID);
     }
 
     public void applyClick(View v) {
@@ -108,32 +105,11 @@ public class FilterActivity extends AppCompatActivity implements SeekBar.OnSeekB
 
         Intent i = new Intent(FilterActivity.this, FilterService.class);
         startService(i);
-
-        makeNotification();
     }
 
-    private void makeNotification() {
-        NotificationCompat.Builder nb = new NotificationCompat.Builder(this);
-        nb.setContentTitle("Shady Screen Filter");
-        nb.setSmallIcon(android.R.drawable.btn_star_big_off);
-        nb.setContentText("Active");
-        nb.setAutoCancel(true);
-        Intent resultIntent = new Intent(this, FilterActivity.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(FilterActivity.class);
-        stackBuilder.addNextIntent(resultIntent);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(
-                        0,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
-        nb.setContentIntent(resultPendingIntent);
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(0x355, nb.build());
-    }
 
-    private void getInit() {
+
+    private void init() {
         alphaSeek = (SeekBar) findViewById(R.id.alphaControl);
         redSeek = (SeekBar) findViewById(R.id.redControl);
         greenSeek = (SeekBar) findViewById(R.id.greenControl);

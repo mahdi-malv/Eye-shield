@@ -12,10 +12,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.Display;
 import android.widget.TextView;
 
+/**
+ * This class gathers the functions needed everywhere
+ */
 public class Tools {
 
     /**
-     *
      * @param context to get Assets
      * @param textViewId  to get the View to change it's font
      * @param fontName The name of font you want to use --> Must be in Assets/fonts with .ttf extension
@@ -27,11 +29,19 @@ public class Tools {
         tv.setTypeface(face);
     }
 
+    /**
+     * @param context is needed to getSystemService
+     */
     public static void stopNotification(Context context) {
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.cancelAll();
     }
 
+    /**
+     * @param activity to getWindowManager
+     * @param resDrawable is id of drawable being converted
+     * @return BitmaoDrawable that is faster than normal changing
+     */
     public static BitmapDrawable toBitmpDrawable(Activity activity, int resDrawable) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();

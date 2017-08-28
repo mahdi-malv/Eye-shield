@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- File created by SkillsOn -->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/flipper_2"><!--Material creamy-->
+    android:background="@color/flipper_2"
+    android:weightSum="10">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sickVRAnim"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/text"/>
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/flipper_margin1"
+        android:layout_weight="6"/>
 
     <!--Scrollable text-->
     <ScrollView
         android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="0dp"
         android:text="@string/flipper_2_text"
         android:layout_marginBottom="16dp"
-        android:layout_above="@+id/next2"
-        android:layout_centerHorizontal="true">
+        android:layout_weight="2.8">
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/flipper_2_text"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="8dp"/>
+            android:textSize="@dimen/flipper_1_text"
+            android:padding="@dimen/_16sdp"/>
     </ScrollView>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/next2"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="0dp"
         app:lottie_fileName="next.json"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        android:layout_marginRight="18dp"
+        android:layout_gravity="right"
+        android:layout_weight="1.2"
+        android:layout_marginRight="@dimen/animation_button_margin2"
         android:layout_marginBottom="@dimen/animation_button_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="@dimen/animation_button_margin2"
         android:padding="8dp"
-        android:background="@drawable/shape_flippers_next_button"/>
-</RelativeLayout>
+        android:background="@drawable/shape_flippers_next_button" />
+</LinearLayout>

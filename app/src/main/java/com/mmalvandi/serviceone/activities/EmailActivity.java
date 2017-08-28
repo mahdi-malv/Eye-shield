@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.mmalvandi.serviceone.R;
 
+//TODO: Change the whole email... Don't show edittexts. Use a button to send email to you.
+
 public class EmailActivity extends AppCompatActivity {
     EditText nameEdit, subjectEdit, bodyEdit;
 
@@ -36,7 +38,7 @@ public class EmailActivity extends AppCompatActivity {
                     || bodyEdit.getText().toString().isEmpty())
                 Toast.makeText(EmailActivity.this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             else
-                sendEmail("mmalvandi@outlook.com", subjectEdit.getText().toString(), "Eye Shield User.\n" + bodyEdit.getText().toString());
+                sendEmail("skillson28@gmail.com", subjectEdit.getText().toString(), "Eye Shield User.\n" + bodyEdit.getText().toString());
         }
         return super.onOptionsItemSelected(item);
     }

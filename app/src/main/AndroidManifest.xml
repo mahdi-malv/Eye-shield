@@ -69,19 +69,26 @@
             android:noHistory="true"
             android:process="com.mmalvandi.stop"
             android:theme="@style/Theme.AppCompat.Dialog"/>
-        <activity android:name=".activities.SplashActivity">
+
+        <activity
+            android:name=".activities.SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.AnimationActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
+
         <activity android:name=".activities.FilterActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:launchMode="singleTask">
         </activity>
 
         <service

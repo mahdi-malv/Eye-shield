@@ -13,4 +13,6 @@
     <dimen name="activity_help_version_size">20sp</dimen>
     <dimen name="activity_help_main_size">25sp</dimen>
     <dimen name="activity_help_name_size_land">30sp</dimen>
+
+    <dimen name="flipper_1_text">@dimen/_13sdp</dimen>
 </resources>

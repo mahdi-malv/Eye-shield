@@ -28,19 +28,16 @@ public class SplashActivity extends Activity {
     }
 
     private void startWithDelay(long delay) {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (isFirstRun("myPref")) {
-                    //TODO : Change and fix
-                    Intent mainIntent = new Intent(SplashActivity.this, AnimationActivity.class);
-                    finish();
-                    startActivity(mainIntent);
-                } else {
-                    Intent mainIntent = new Intent(SplashActivity.this, AnimationActivity.class);
-                    finish();
-                    startActivity(mainIntent);
-                }
+        new Handler().postDelayed(() -> {
+            if (isFirstRun("myPref")) {
+                //TODO : Change and fix
+                Intent mainIntent = new Intent(SplashActivity.this, AnimationActivity.class);
+                finish();
+                startActivity(mainIntent);
+            } else {
+                Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                finish();
+                startActivity(mainIntent);
             }
         }, delay);
     }

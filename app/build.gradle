@@ -17,12 +17,19 @@ android {
         targetSdkVersion 25
         versionCode 2
         versionName "0.0.1"
+        jackOptions {// Adds lambda exprssion
+            enabled true
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 
@@ -35,4 +42,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.github.Hitomis:CircleMenu:v1.1.0'
     compile 'com.airbnb.android:lottie:2.1.0'
+    compile 'com.intuit.sdp:sdp-android:1.0.4'
 }
